@@ -23,7 +23,9 @@
   </div>
   <div>
     <button>Generate shopping list</button>
-    <button>Add Ingredient</button>
+    <%= link_to "/recipe_foods/new" do %>
+      <button>Add Ingredient</button>
+    <% end %>
   </div>
   <table>
     <tr>
@@ -32,14 +34,18 @@
       <th>Value</th>
       <th>Actions</th>
     </tr>
-    <% @foods.each do |food|%>
+    <% @foods.each do |recipe|%>
       <tr>
-        <th><%= food.name %></th>
-        <th>placeholder for quantity <%= food.measurement_unit %></th>
-        <th>$<%= food.price %></th>
+        <th><%= recipe.food.name.capitalize %></th>
+        <th><%= recipe.quantity %> <%= recipe.food.measurement_unit %></th>
+        <th>$<%= recipe.price %></th>
         <th>
-          <button>Modify</button>
-          <button>Remove</button>
+          <%= link_to "/recipe_foods/#{recipe.id}/edit" do %>
+            <button>Modify</button>
+          <% end %>
+          <%= link_to "/recipe_foods/#{recipe.id}", method: :delete do %>
+            <button>Remove</button>
+          <% end %>
         </th>
       </tr>
     <% end %>

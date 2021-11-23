@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1 or /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = @recipe.foods
+    @foods = RecipeFood.where(recipe_id: params[:id]).includes(:food)
   end
 
   def update_public
