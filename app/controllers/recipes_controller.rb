@@ -9,6 +9,9 @@ class RecipesController < ApplicationController
   # GET /recipes/1 or /recipes/1.json
   def show; end
 
+  def public_index
+    
+  end
   # GET /recipes/new
   def new
     @recipe = Recipe.new
