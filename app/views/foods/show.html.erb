@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<section class="food-show">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @food.name %>
+  </p>
 
-<p>
-  <strong>Measurement unit:</strong>
-  <%= @food.measurement_unit %>
-</p>
+  <p>
+    <strong>Measurement unit:</strong>
+    <%= @food.measurement_unit %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @food.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @food.price %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @food.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+  <div>
+    <%= link_to 'Edit', edit_food_path(@food) %>
+    <%= link_to 'Back', foods_path %>
+  </div>
+</section>
