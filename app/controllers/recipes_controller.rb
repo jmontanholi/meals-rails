@@ -7,11 +7,21 @@ class RecipesController < ApplicationController
   end
 
   def public_index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(public: true).includes(:foods, :user)
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+    @foods = RecipeFood.where(recipe_id: params[:id]).includes(:food)
+  end
+
+  def update_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    flash[:notice] = "Your recipe is now #{@recipe.public ? 'public' : 'private'}"
+    redirect_back(fallback_location: root_path)
+  end
   # GET /recipes/new
   def new
     @recipe = Recipe.new
