@@ -1,3 +1,23 @@
 // Place all the styles related to the Foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin flex_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-show {
+  @include flex_center
+}
+.food-index {
+  @include flex_center
+}
+.food-new {
+  @include flex_center
+}
+.food-form {
+  @include flex_center
+}
