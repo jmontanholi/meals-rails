@@ -2,7 +2,18 @@ class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[show edit update destroy]
 
   def general_list
-
+    @user = current_user
+    @recipes = @user.recipes.includes(recipe_foods: [:food])
+    @food_count = 0
+    @price_count = 0
+    @recipe_foods = []
+    @recipes.each do |recipe|
+      @food_count += recipe.foods.count()
+      recipe.recipe_foods.each do |recipefood| 
+        @price_count += recipefood.price
+        @recipe_foods << recipefood
+      end
+    end
   end
 
   # GET /recipe_foods/new
