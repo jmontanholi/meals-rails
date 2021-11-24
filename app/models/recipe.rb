@@ -8,6 +8,10 @@ class Recipe < ApplicationRecord
   end
 
   def total_price
-    
+    price_count = 0
+    recipe_foods.each do |recipefood|
+      price_count += recipefood.price
+    end
+    price_count
   end
 end

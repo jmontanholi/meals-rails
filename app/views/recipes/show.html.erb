@@ -1,54 +1,66 @@
-<div class="major_div">
-  <h1><%= @recipe.name %></h1>
-  <div class="details_major_div">
-    <div class="details_smaller_div">
-      <p>Preparation time: <span><%= @recipe.preparation_time %></span></p>
-      <p>Cooking time: <span><%= @recipe.cooking_time %></span></p>
-      <p><%= @recipe.description %></p>
-    </div>
-    <div class="public_btn_div">
-      <p>Public:</p>
-      <%= link_to "/recipes/#{@recipe.id}/update_public", method: :post do %>
-        <label class="toggle">
-          <% if @recipe.public %>
-            <input type="checkbox" checked />
-          <% else %>
-            <input type="checkbox" />
+<% if can? :read, @recipe%>
+  <div class="major_div">
+    <h1><%= @recipe.name %></h1>
+    <div class="details_major_div">
+      <div class="details_smaller_div">
+        <p>Preparation time: <span><%= @recipe.preparation_time %></span></p>
+        <p>Cooking time: <span><%= @recipe.cooking_time %></span></p>
+        <p><%= @recipe.description %></p>
+      </div>
+      <% if can? :manage, @recipe%>
+        <div class="public_btn_div">
+          <p>Public:</p>
+          <%= link_to "/recipes/#{@recipe.id}/update_public", method: :post do %>
+            <label class="toggle">
+              <% if @recipe.public %>
+                <input type="checkbox" checked />
+              <% else %>
+                <input type="checkbox" />
+              <% end %>
+              <span class="slider round"></span>
+            </label>
           <% end %>
-          <span class="slider round"></span>
-        </label>
+        </div>
       <% end %>
     </div>
-  </div>
-  <div>
-    <%= link_to "/general_list" do %>
-      <button>Generate shopping list</button>
-    <% end %>
-    <%= link_to new_recipe_food_url(recipe_id: @recipe.id) do %>
-      <button>Add Ingredient</button>
-    <% end %>
-  </div>
-  <table>
-    <tr>
-      <th>Food</th>
-      <th>Quantity</th>
-      <th>Value</th>
-      <th>Actions</th>
-    </tr>
-    <% @foods.each do |recipe|%>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "/general_list" do %>
+          <button>Generate shopping list</button>
+        <% end %>
+      <% end %>
+      <% if can? :manage, @recipe%>
+        <%= link_to new_recipe_food_url(recipe_id: @recipe.id) do %>
+          <button>Add Ingredient</button>
+        <% end %>
+      <% end %>
+    </div>
+    <table>
       <tr>
-        <th><%= recipe.food.name.capitalize %></th>
-        <th><%= recipe.quantity %> <%= recipe.food.measurement_unit %></th>
-        <th>$<%= recipe.price %></th>
-        <th>
-          <%= link_to edit_recipe_food_url(recipe.id, recipe_id: @recipe.id) do %>
-            <button>Modify</button>
-          <% end %>
-          <%= link_to "/recipe_foods/#{recipe.id}", method: :delete do %>
-            <button>Remove</button>
-          <% end %>
-        </th>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <% if can? :manage, @recipe%>
+          <th>Actions</th>
+        <% end %>
       </tr>
-    <% end %>
-  </table>
-</div>
+      <% @foods.each do |recipe|%>
+        <tr>
+          <th><%= recipe.food.name.capitalize %></th>
+          <th><%= recipe.quantity %> <%= recipe.food.measurement_unit %></th>
+          <th>$<%= recipe.price %></th>
+          <th>
+          <% if can? :manage, @recipe%>
+              <%= link_to edit_recipe_food_url(recipe.id, recipe_id: @recipe.id) do %>
+                <button>Modify</button>
+              <% end %>
+              <%= link_to "/recipe_foods/#{recipe.id}", method: :delete do %>
+                <button>Remove</button>
+              <% end %>
+          <% end %>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>

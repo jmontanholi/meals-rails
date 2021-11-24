@@ -2,6 +2,9 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Foods</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'New Food', new_food_path, class:'link-to' %>
+  <% end %>
 
   <table>
     <thead class="table-headers">
@@ -22,15 +25,9 @@
           <td><%= food.price %></td>
           <td><%= food.user_id %></td>
           <td><%= link_to 'Show', food %></td>
-          <td><%= link_to 'Edit', edit_food_path(food) %></td>
           <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
-  <br>
-  <% if user_signed_in? %>
-    <%= link_to 'New Food', new_food_path, class:'link-to' %>
-  <% end %>
 </section>

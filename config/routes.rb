@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'recipes#public_index'
   resources :recipe_foods
-  resources :foods
-  resources :recipes
+  resources :foods, except: :edit
+  resources :recipes, expect: :edit
   devise_for :users
 
   get 'public_recipes', to: 'recipes#public_index'

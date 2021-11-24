@@ -3,15 +3,13 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-
+    p 'working here'
     can :read, Food
+    can :read, Recipe, public: true
 
     return unless user.present?
-
-    can :manage, :all, user: user
-
-    # return unless user.admin?
-
-    # can :manage, :all
+    p 'ashduhaduasdsauhduasdashdsauh'
+    can :manage, Recipe, user_id: user.id
+    # can :manage, RecipeFood
   end
 end
