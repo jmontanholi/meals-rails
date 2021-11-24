@@ -1,8 +1,8 @@
 <div class="major_div">
   <h1>Shopping List</h1>
   <div>
-    <p>Amount of food items to buy: <span></span></p>
-    <p>Total value of food needed: <span>$</span></p>
+    <p>Amount of food items to buy: <span><%= @food_count %></span></p>
+    <p>Total value of food needed: <span>$<%= @price_count %></span></p>
   </div>
   <table>
     <tr>
@@ -10,5 +10,12 @@
       <th>Quantity</th>
       <th>Price</th>
     </tr>
+    <% @recipe_foods.each do |recipe|%>
+      <tr>
+        <th><%= recipe.food.name.capitalize %></th>
+        <th><%= recipe.quantity %> <%= recipe.food.measurement_unit %></th>
+        <th>$<%= recipe.price %></th>
+      </tr>
+    <% end %>
   </table>
 </div>

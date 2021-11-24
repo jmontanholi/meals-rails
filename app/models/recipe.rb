@@ -8,6 +8,6 @@ class Recipe < ApplicationRecord
   end
 
   def total_price
-    foods.sum(:price)
+    
   end
 end

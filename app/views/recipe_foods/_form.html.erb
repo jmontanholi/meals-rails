@@ -19,8 +19,9 @@
   <%= form.hidden_field :recipe_id, value: @recipe.id %>
 
   <div class="field">
-    <%= form.label :food_id %>
-    <%= form.text_field :food_id %>
+    <%# <%= form.label :food_id %>
+    <%# <%= form.text_field :food_id %>
+    <%= form.collection_select :food_id, @foods, :id, :name %>
   </div>
 
   <div class="actions">
