@@ -16,10 +16,7 @@
     <%= form.text_field :quantity %>
   </div>
 
-  <div class="field">
-    <%= form.label :recipe_id %>
-    <%= form.text_field :recipe_id %>
-  </div>
+  <%= form.hidden_field :recipe_id, value: @recipe.id %>
 
   <div class="field">
     <%= form.label :food_id %>

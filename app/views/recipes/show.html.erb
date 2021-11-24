@@ -21,8 +21,10 @@
     </div>
   </div>
   <div>
-    <button>Generate shopping list</button>
-    <%= link_to "/recipe_foods/new" do %>
+    <%= link_to "/general_list" do %>
+      <button>Generate shopping list</button>
+    <% end %>
+    <%= link_to new_recipe_food_url(recipe_id: @recipe.id) do %>
       <button>Add Ingredient</button>
     <% end %>
   </div>
@@ -39,7 +41,7 @@
         <th><%= recipe.quantity %> <%= recipe.food.measurement_unit %></th>
         <th>$<%= recipe.price %></th>
         <th>
-          <%= link_to "/recipe_foods/#{recipe.id}/edit" do %>
+          <%= link_to edit_recipe_food_url(recipe.id, recipe_id: @recipe.id) do %>
             <button>Modify</button>
           <% end %>
           <%= link_to "/recipe_foods/#{recipe.id}", method: :delete do %>

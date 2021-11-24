@@ -1,6 +1,14 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .item_li {
   transition: all 0.5s;
   border: 1px solid black;
@@ -128,4 +136,34 @@ input:checked + .slider:before {
 }
 .slider.round::before {
   border-radius: 20px;
+}
+
+.recipe-index {
+  @include flex-center;
+
+  .table-headers {
+    text-align: left;
+  }
+
+  .recipe-row {
+    box-shadow: 10px 10px 10px rgb(206, 206, 206);
+    border-radius: 20px black;
+    height: 4rem;
+  }
+
+  .link-to {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid rgba(204, 204, 204, 0.459);
+    border-radius: 20px;
+  }
+}
+
+.recipe-new {
+  @include flex-center;
+
+  .actions {
+    @include flex-center
+  }
 }
