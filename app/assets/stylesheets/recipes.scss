@@ -1,0 +1,66 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.recipe_link {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe_link:hover {
+  color: black;
+}
+
+.recipe_link:visited {
+  color: black;
+}
+
+.item_li {
+  transition: all 0.5s;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  background-color: white;
+  min-width: 35rem;
+  min-height: 8rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.item_li:hover {
+  box-shadow: 2px 2px 2px black;
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.items_ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item_title_div {
+  margin: 2rem;
+}
+
+.item_foods_div {
+  margin: 2rem 3rem;
+}
+
+.item_foods_count {
+  span {
+    font-weight: bold;
+  }
+}
+
+.item_foods_price {
+  span {
+    font-weight: bold;
+  }
+}
+
+.item_username {
+  span {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="major-div">
+  <h1>Public Recipes</h1>
+  <ul class="items_ul">
+    <% unless @recipes == nil %>
+      <% @recipes.each do |recipe| %>
+        <%= link_to "recipes/#{recipe.id}", class: "recipe_link" do %>
+          <li class="item_li">
+            <div class="item_title_div">
+              <h3 class="item_title"><%= recipe.name %></h3>
+              <p class="item_username">By: <span><%= recipe.user.name.capitalize%></span></p>
+            </div>
+            
+            <div class="item_foods_div">
+              <p class="item_foods_count">Total food items: <span><%= recipe.foods_count%></span></p>
+              <p class="item_foods_price">Total price: <span>$<%= recipe.total_price%></span></p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h2>No public recipes</h2>
+    <% end %>
+  </ul>
+</div>
