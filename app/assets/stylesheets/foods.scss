@@ -10,14 +10,32 @@
 }
 
 .food-show {
-  @include flex_center
+  @include flex_center;
 }
 .food-index {
-  @include flex_center
+  @include flex_center;
+
+  .table-headers {
+    text-align: left;
+  }
+
+  .food-row {
+    box-shadow: 10px 10px 10px rgb(206, 206, 206);
+    border-radius: 20px black;
+    height: 4rem;
+  }
+
+  .link-to {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid rgba(204, 204, 204, 0.459);
+    border-radius: 20px;
+  }
 }
 .food-new {
-  @include flex_center
+  @include flex_center;
 }
 .food-form {
-  @include flex_center
+  @include flex_center;
 }
