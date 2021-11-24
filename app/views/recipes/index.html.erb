@@ -4,7 +4,7 @@
   <h1>Recipes</h1>
 
   <table>
-    <thead>
+    <thead class="table-headers">
       <tr>
         <th>Name</th>
         <th>Preparation time</th>
@@ -18,7 +18,7 @@
 
     <tbody>
       <% @recipes.each do |recipe| %>
-        <tr>
+        <tr class="recipe-row">
           <td><%= recipe.name %></td>
           <td><%= recipe.preparation_time %></td>
           <td><%= recipe.cooking_time %></td>
@@ -35,5 +35,5 @@
 
   <br>
 
-  <%= link_to 'New Recipe', new_recipe_path %>
+  <%= link_to 'New Recipe', new_recipe_path, class:"link-to" %>
 </section>
