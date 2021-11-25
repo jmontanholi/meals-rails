@@ -26,8 +26,10 @@ RSpec.describe User, type: :model do
 
   # Not working
   it 'should be able to read recipes' do
-    ability = Ability.new(User.new)
-    expect(ability).to be_able_to(:read, Recipe.new(user: @user2, public: false))
+    user = User.find(1)
+    p user
+    ability = Ability.new(user)
+    expect(ability).to be_able_to(:read, Recipe.new(user: user, public: false))
   end
 end
 
