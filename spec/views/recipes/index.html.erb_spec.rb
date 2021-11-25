@@ -1,13 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "recipes/index", type: :view do
+
+RSpec.describe "recipes/index/", type: :system do
+
   before(:each) do
-    @test_user = User.new(name: 'test', email:'test@gmail', password:'123456')
+    @test_user = User.new(name: 'test', email:'test616@gmail', password:'123456')
     @test_user.save!
-    sign_in @test_user 
+    # sign_in @test_user 
     assign(:recipes, [
       Recipe.create!(
-        name: "Name",
+        name: "Name2",
         preparation_time: "9.99",
         cooking_time: "9.99",
         description: "MyText",
@@ -15,7 +17,7 @@ RSpec.describe "recipes/index", type: :view do
         user: @test_user
       ),
       Recipe.create!(
-        name: "Name",
+        name: "Name1",
         preparation_time: "9.99",
         cooking_time: "9.99",
         description: "MyText",
@@ -26,11 +28,13 @@ RSpec.describe "recipes/index", type: :view do
   end
 
   it "renders a list of recipes" do
-    render
-    assert_select "tr>td", text: "Name".to_s, count: 2
-    assert_select "tr>td", text: "9.99".to_s, count: 2
-    assert_select "tr>td", text: "9.99".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
+    visit user_recipes_path(@test_user)
+    expect(page).to have_selector('td', text: 'Name2') 
+    
+    # assert_select "tr>td", text: "Name".to_s, count: 2
+    # assert_select "tr>td", text: "9.99".to_s, count: 2
+    # assert_select "tr>td", text: "9.99".to_s, count: 2
+    # assert_select "tr>td", text: "MyText".to_s, count: 2
+    # assert_select "tr>td", text: false.to_s, count: 2
   end
 end
