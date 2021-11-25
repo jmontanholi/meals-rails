@@ -146,8 +146,6 @@ input:checked + .slider:before {
   }
 
   .recipe-row {
-    box-shadow: 10px 10px 10px rgb(206, 206, 206);
-    border-radius: 20px black;
     height: 4rem;
   }
 
@@ -166,4 +164,8 @@ input:checked + .slider:before {
   .actions {
     @include flex-center
   }
+}
+
+.delete_btn {
+  padding: 0.2rem;
 }

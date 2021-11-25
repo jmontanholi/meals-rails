@@ -3,10 +3,10 @@
 
   <h1>Foods</h1>
   <% if user_signed_in? %>
-    <%= link_to 'New Food', new_food_path, class:'link-to' %>
+    <%= link_to 'New Food', new_food_path, class:'link-to submit' %>
   <% end %>
 
-  <table>
+  <table class="table">
     <thead class="table-headers">
       <tr>
         <th>Name</th>
@@ -20,12 +20,12 @@
     <tbody>
       <% @foods.each do |food| %>
         <tr class="food-row">
-          <td><%= food.name %></td>
-          <td><%= food.measurement_unit %></td>
-          <td><%= food.price %></td>
-          <td><%= food.user_id %></td>
-          <td><%= link_to 'Show', food %></td>
-          <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="food-size"><%= food.name %></td>
+          <td class="food-size"><%= food.measurement_unit %></td>
+          <td class="food-size"><%= food.price %></td>
+          <td class="food-size"><%= food.user_id %></td>
+          <td class="food-size"><%= link_to 'Show', food, class: 'link-to submit' %></td>
+          <td class="food-size"><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link-to submit' %></td>
         </tr>
       <% end %>
     </tbody>

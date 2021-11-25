@@ -19,7 +19,7 @@
           <tr class="recipe-row">
             <td><%= recipe.name %></td>
             <td><%= recipe.description %></td>
-            <td><%= link_to 'Delete', "recipes/#{recipe.id}", data: {confirm: "Are you sure?"}, method: :delete %></td>
+            <td><%= link_to 'Delete', "recipes/#{recipe.id}", data: {confirm: "Are you sure?"}, method: :delete, class: 'submit delete_btn' %></td>
           </tr>
         <% end %>
       </tbody>
@@ -27,6 +27,6 @@
 
     <br>
 
-    <%= link_to 'New Recipe', new_user_recipe_path, class:"link-to" %>
+    <%= link_to 'New Recipe', new_user_recipe_path, class:"submit delete_btn" %>
   </section>
 <% end %>

@@ -21,9 +21,12 @@ $main_color: #ff7f50;
   }
 
   .food-row {
-    box-shadow: 10px 10px 10px rgb(206, 206, 206);
-    border-radius: 20px black;
     height: 4rem;
+    margin-top: 5rem;
+  }
+
+  .food-size {
+    font-size: 1.2rem;
   }
 
   .link-to {
@@ -32,6 +35,14 @@ $main_color: #ff7f50;
     background-color: transparent;
     border: 2px solid rgba(204, 204, 204, 0.459);
     border-radius: 20px;
+  }
+
+  .link-to:visited {
+    color: $main_color
+  }
+
+  .link-to:hover {
+    color: white
   }
 }
 .food-new {
