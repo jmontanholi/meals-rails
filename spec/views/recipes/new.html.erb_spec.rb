@@ -1,33 +1,33 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "recipes/new", type: :view do
-  before(:each) do
-    assign(:recipe, Recipe.new(
-      name: "MyString",
-      preparation_time: "9.99",
-      cooking_time: "9.99",
-      description: "MyText",
-      public: false,
-      user: nil
-    ))
-  end
+# RSpec.describe "recipes/new", type: :view do
+#   before(:each) do
+#     assign(:recipe, Recipe.new(
+#       name: "MyString",
+#       preparation_time: "9.99",
+#       cooking_time: "9.99",
+#       description: "MyText",
+#       public: false,
+#       user: nil
+#     ))
+#   end
 
-  it "renders new recipe form" do
-    render
+#   it "renders new recipe form" do
+#     render
 
-    assert_select "form[action=?][method=?]", user_recipes_path, "post" do
+#     assert_select "form[action=?][method=?]", user_recipes_path, "post" do
 
-      assert_select "input[name=?]", "recipe[name]"
+#       assert_select "input[name=?]", "recipe[name]"
 
-      assert_select "input[name=?]", "recipe[preparation_time]"
+#       assert_select "input[name=?]", "recipe[preparation_time]"
 
-      assert_select "input[name=?]", "recipe[cooking_time]"
+#       assert_select "input[name=?]", "recipe[cooking_time]"
 
-      assert_select "textarea[name=?]", "recipe[description]"
+#       assert_select "textarea[name=?]", "recipe[description]"
 
-      assert_select "input[name=?]", "recipe[public]"
+#       assert_select "input[name=?]", "recipe[public]"
 
-      assert_select "input[name=?]", "recipe[user_id]"
-    end
-  end
-end
+#       assert_select "input[name=?]", "recipe[user_id]"
+#     end
+#   end
+# end
