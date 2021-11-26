@@ -39,5 +39,7 @@ RSpec.describe 'Food page', type: :feature do
       click_button 'Create Food'
       expect(page).to have_content('Another Bolo')
     end
+
+    
   end
 end
