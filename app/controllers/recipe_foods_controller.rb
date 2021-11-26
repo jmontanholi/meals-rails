@@ -59,7 +59,9 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(placeholder)
     @recipe_food.destroy
     respond_to do |format|
-      format.html { redirect_to "/user/#{@recipe.user_id}/recipes/#{@recipe.id}", notice: 'Recipe food was successfully destroyed.' }
+      format.html do
+        redirect_to "/user/#{@recipe.user_id}/recipes/#{@recipe.id}", notice: 'Recipe food was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end

@@ -76,6 +76,7 @@ table {
 .public_btn_div {
   display: flex;
   align-items: flex-start;
+
   p {
     margin: 0 0.5rem 0 0;
     font-weight: bold;
@@ -111,7 +112,7 @@ table {
   height: 20px;
 }
 
-.slider:before {
+.slider::before {
   content: "";
   position: absolute;
   height: 10px;
@@ -127,13 +128,14 @@ input:checked + .slider {
   box-shadow: 0 0 12px #33fd00;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   transform: translateX(15px);
 }
 
 .slider.round {
   border-radius: 20px;
 }
+
 .slider.round::before {
   border-radius: 20px;
 }
@@ -162,7 +164,7 @@ input:checked + .slider:before {
   @include flex-center;
 
   .actions {
-    @include flex-center
+    @include flex-center;
   }
 }
 

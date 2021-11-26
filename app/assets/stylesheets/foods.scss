@@ -13,6 +13,7 @@ $main_color: #ff7f50;
 .food-show {
   @include flex_center;
 }
+
 .food-index {
   @include flex_center;
 
@@ -38,16 +39,18 @@ $main_color: #ff7f50;
   }
 
   .link-to:visited {
-    color: $main_color
+    color: $main_color;
   }
 
   .link-to:hover {
-    color: white
+    color: white;
   }
 }
+
 .food-new {
   @include flex_center;
 }
+
 .food-form {
   @include flex_center;
 }
