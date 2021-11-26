@@ -56,9 +56,10 @@ class RecipeFoodsController < ApplicationController
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
     placeholder = @recipe_food.recipe_id
+    @recipe = Recipe.find(placeholder)
     @recipe_food.destroy
     respond_to do |format|
-      format.html { redirect_to "/recipes/#{placeholder}", notice: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_to "/user/#{@recipe.user_id}/recipes/#{@recipe.id}", notice: 'Recipe food was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
