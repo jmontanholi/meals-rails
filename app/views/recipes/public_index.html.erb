@@ -3,7 +3,7 @@
   <ul class="items_ul">
     <% unless @recipes == nil %>
       <% @recipes.each do |recipe| %>
-        <%= link_to "recipes/#{recipe.id}", class: "recipe_link" do %>
+        <%= link_to "user/#{recipe.user_id}/recipes/#{recipe.id}", class: "recipe_link" do %>
           <li class="item_li">
             <div class="item_title_div">
               <h3 class="item_title"><%= recipe.name %></h3>

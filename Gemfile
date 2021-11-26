@@ -6,7 +6,7 @@ ruby '>= 2.7.2'
 # gem 'bullet'
 gem 'cancancan'
 gem 'devise'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: %i[development test]
 gem 'faker'
 # beutifies files
 gem 'htmlbeautifier'

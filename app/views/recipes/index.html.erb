@@ -1,39 +1,32 @@
-<section class="recipe-index">
-  <p id="notice"><%= notice %></p>
+<% if can? :read, Recipe %>
+  <section class="recipe-index">
+    <p id="notice"><%= notice %></p>
 
-  <h1>Recipes</h1>
+    <h1>Recipes</h1>
 
-  <table>
-    <thead class="table-headers">
-      <tr>
-        <th>Name</th>
-        <th>Preparation time</th>
-        <th>Cooking time</th>
-        <th>Description</th>
-        <th>Public</th>
-        <th>User</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @recipes.each do |recipe| %>
-        <tr class="recipe-row">
-          <td><%= recipe.name %></td>
-          <td><%= recipe.preparation_time %></td>
-          <td><%= recipe.cooking_time %></td>
-          <td><%= recipe.description %></td>
-          <td><%= recipe.public %></td>
-          <td><%= recipe.user_id %></td>
-          <td><%= link_to 'Show', recipe %></td>
-          <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-          <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <table>
+      <thead class="table-headers">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @recipes.each do |recipe| %>
+          <tr class="recipe-row">
+            <td><%= recipe.name %></td>
+            <td><%= recipe.description %></td>
+            <td><%= link_to 'Delete', "recipes/#{recipe.id}", data: {confirm: "Are you sure?"}, method: :delete, class: 'submit delete_btn' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <%= link_to 'New Recipe', new_recipe_path, class:"link-to" %>
-</section>
+    <br>
+
+    <%= link_to 'New Recipe', new_user_recipe_path, class:"submit delete_btn" %>
+  </section>
+<% end %>

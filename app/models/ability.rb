@@ -5,13 +5,10 @@ class Ability
     user ||= User.new
 
     can :read, Food
+    can :read, Recipe, public: true
 
     return unless user.present?
 
-    can :manage, :all, user: user
-
-    # return unless user.admin?
-
-    # can :manage, :all
+    can :manage, Recipe, user_id: user.id
   end
 end

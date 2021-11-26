@@ -1,9 +1,8 @@
 module RecipeFoodsHelper
-
   def food_count(recipes)
     food_count = 0
     recipes.each do |recipe|
-      food_count += recipe.foods.count()
+      food_count += recipe.foods.count
     end
     food_count
   end

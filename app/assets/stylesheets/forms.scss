@@ -1,0 +1,53 @@
+$main_color: #ff7f50;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 3px 4px 4px black;
+  transform: scale(1.1);
+}
+
+.submit {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: $main_color;
+  border-radius: 1rem;
+  transition: all 0.4s;
+  background-color: white;
+  border: 2px solid $main_color;
+}
+
+.submit:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $main_color;
+  transform: scale(1.2);
+}
+
+.devise_link {
+  color: $main_color;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.devise_link:visited {
+  color: $main_color;
+}
+
+.devise_link:hover {
+  color: white;
+}

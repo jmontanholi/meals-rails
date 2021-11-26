@@ -1,10 +1,18 @@
 <nav class="navbar">
   <div>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <%= link_to 'Log in', new_user_session_path %>
-    <%= link_to 'Log out', destroy_user_session_path %>
+    <% unless user_signed_in? %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to 'Log in', new_user_session_path %>
+    <% else %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    <% end %>
     <%= link_to 'Ingredients', foods_path %>
-    <%= link_to 'Recipes', recipes_path %>
-    <%= link_to 'General list', general_list_path %>
+    <% if user_signed_in? %>
+      <%= link_to 'Recipes', user_recipes_path(current_user.id) %>
+    <% end %>
+    <%= link_to 'Public Recipes', public_recipes_path %>
+    <% if can? :read, @recipe_foods %>
+      <%= link_to 'General list', general_list_path %>
+    <% end %>
   </div>
 </nav>

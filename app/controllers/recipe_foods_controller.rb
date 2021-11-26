@@ -25,7 +25,8 @@ class RecipeFoodsController < ApplicationController
   # POST /recipe_foods or /recipe_foods.json
   def create
     @recipe = Recipe.find(params[:recipe_food][:recipe_id])
-    @recipe_food = RecipeFood.new(quantity: params[:recipe_food][:quantity], food_id: params[:recipe_food][:food_id], recipe_id: @recipe.id)
+    @recipe_food = RecipeFood.new(quantity: params[:recipe_food][:quantity], food_id: params[:recipe_food][:food_id],
+                                  recipe_id: @recipe.id)
 
     respond_to do |format|
       if @recipe_food.save
@@ -55,9 +56,12 @@ class RecipeFoodsController < ApplicationController
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
     placeholder = @recipe_food.recipe_id
+    @recipe = Recipe.find(placeholder)
     @recipe_food.destroy
     respond_to do |format|
-      format.html { redirect_to "/recipes/#{placeholder}", notice: 'Recipe food was successfully destroyed.' }
+      format.html do
+        redirect_to "/user/#{@recipe.user_id}/recipes/#{@recipe.id}", notice: 'Recipe food was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
