@@ -22,5 +22,13 @@ RSpec.describe 'Recipe page', type: :feature do
       click_button 'Add Ingredient'
       expect(page).to have_content('New Recipe Food')
     end
+
+    it 'should be able to add ingredient' do
+      # visit recipe_path
+      click_button 'Add Ingredient'
+      fill_in 'Quantity', with: 2
+      click_button 'Create Recipe food'
+      expect(page).to have_content(@recipe.name)
+    end
   end
 end
