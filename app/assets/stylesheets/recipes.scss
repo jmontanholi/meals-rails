@@ -1,0 +1,173 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_li {
+  transition: all 0.5s;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  background-color: white;
+  min-width: 35rem;
+  min-height: 8rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.item_li:hover {
+  box-shadow: 2px 2px 2px black;
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.items_ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item_title_div {
+  margin: 2rem;
+}
+
+.item_foods_div {
+  margin: 2rem 3rem;
+}
+
+.item_foods_count {
+  span {
+    font-weight: bold;
+  }
+}
+
+.item_foods_price {
+  span {
+    font-weight: bold;
+  }
+}
+
+.item_username {
+  span {
+    font-weight: bold;
+  }
+}
+
+// Show page for recipes
+
+table {
+  width: 50%;
+  margin-top: 2rem;
+}
+
+.details_major_div {
+  display: flex;
+  justify-content: space-between;
+  min-width: 35rem;
+  min-height: 8rem;
+}
+
+.public_btn_div {
+  display: flex;
+  align-items: flex-start;
+
+  p {
+    margin: 0 0.5rem 0 0;
+    font-weight: bold;
+  }
+}
+
+.toggle {
+  position: relative;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .onoff {
+  color: #fff;
+  font-size: 6em;
+  text-align: center;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background-color: #333;
+  transition: 0.4s;
+  width: 50px;
+  height: 20px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 25px;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 5px;
+  left: 5px;
+}
+
+input:checked + .slider {
+  background-color: #33fd00;
+  box-shadow: 0 0 12px #33fd00;
+}
+
+input:checked + .slider::before {
+  transform: translateX(15px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round::before {
+  border-radius: 20px;
+}
+
+.recipe-index {
+  @include flex-center;
+
+  .table-headers {
+    text-align: left;
+  }
+
+  .recipe-row {
+    height: 4rem;
+  }
+
+  .link-to {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid rgba(204, 204, 204, 0.459);
+    border-radius: 20px;
+  }
+}
+
+.recipe-new {
+  @include flex-center;
+
+  .actions {
+    @include flex-center;
+  }
+}
+
+.delete_btn {
+  padding: 0.2rem;
+}

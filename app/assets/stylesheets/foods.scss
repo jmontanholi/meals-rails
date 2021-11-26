@@ -1,0 +1,56 @@
+// Place all the styles related to the Foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$main_color: #ff7f50;
+
+@mixin flex_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-show {
+  @include flex_center;
+}
+
+.food-index {
+  @include flex_center;
+
+  .table-headers {
+    text-align: left;
+  }
+
+  .food-row {
+    height: 4rem;
+    margin-top: 5rem;
+  }
+
+  .food-size {
+    font-size: 1.2rem;
+  }
+
+  .link-to {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid rgba(204, 204, 204, 0.459);
+    border-radius: 20px;
+  }
+
+  .link-to:visited {
+    color: $main_color;
+  }
+
+  .link-to:hover {
+    color: white;
+  }
+}
+
+.food-new {
+  @include flex_center;
+}
+
+.food-form {
+  @include flex_center;
+}

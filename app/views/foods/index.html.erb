@@ -1,0 +1,33 @@
+<section class="food-index">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Foods</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'New Food', new_food_path, class:'link-to submit' %>
+  <% end %>
+
+  <table class="table">
+    <thead class="table-headers">
+      <tr>
+        <th>Name</th>
+        <th>Measurement unit</th>
+        <th>Price</th>
+        <th>User</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr class="food-row">
+          <td class="food-size"><%= food.name %></td>
+          <td class="food-size"><%= food.measurement_unit %></td>
+          <td class="food-size"><%= food.price %></td>
+          <td class="food-size"><%= food.user_id %></td>
+          <td class="food-size"><%= link_to 'Show', food, class: 'link-to submit' %></td>
+          <td class="food-size"><%= link_to 'Destroy', food, method: :delete, class: 'link-to submit' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

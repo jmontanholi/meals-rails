@@ -1,0 +1,22 @@
+<section class="food-show">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @food.name %>
+  </p>
+
+  <p>
+    <strong>Measurement unit:</strong>
+    <%= @food.measurement_unit %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @food.price %>
+  </p>
+
+  <div>
+    <%= link_to 'Back', foods_path %>
+  </div>
+</section>

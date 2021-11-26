@@ -1,59 +1,60 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Rails Meals
 
-> One paragraph statement about the project.
+> A website about food recipes.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+In this app users can sign up, login, create foods, recipes and recipe_foods associations
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- Ruby on Rails
+- HTML&CSS
+- VScode
+- Git and GitHub
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Ruby
+- Command Line
+- Github account
 ### Setup
 
+- First open the command line, go to the directory you want this repository to be cloned into then do the following command:
+
+`git clone https://github.com/jmontanholi/meals-rails.git`
 ### Install
 
+- Run `bundle install`
+- Create a `.env` file to store your PSQL username and password. Check `database.yml`.
+- Run `rails db:create`
+- Run `rails db:migrate`
 ### Usage
 
+- Run `rails server`
+- Open the your host (it will be shown in the console)
 ### Run tests
 
-### Deployment
-
-
-
+- Run `bundle exec rspec` or `rails rspec`
 ## Authors
 
-👤 **Author1**
+👤 *Gabriel Rendon*
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
+- Linkedin [Gabriel Rendon](https://www.linkedin.com/in/gabriel-rendon-paredes/)
 
-👤 **Author2**
+👤 **João Vítor Montanholi Nunes**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
 
 ## 🤝 Contributing
 
@@ -67,9 +68,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
 
 ## 📝 License
 
