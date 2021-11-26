@@ -2,16 +2,16 @@
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <%= form.text_field :quantity, class: 'input' %>
   </div>
 
   <%= form.hidden_field :recipe_id, value: @recipe.id %>
 
   <div class="field">
-    <%= form.collection_select :food_id, @foods, :id, :name %>
+    <%= form.collection_select :food_id, @foods, :id, :name%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions field">
+    <%= form.submit class: 'submit' %>
   </div>
 <% end %>
