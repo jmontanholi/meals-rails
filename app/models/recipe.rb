@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods
   has_many :foods, through: :recipe_foods, dependent: :destroy
 
- def foods_count
+  def foods_count
     foods.count
   end
 

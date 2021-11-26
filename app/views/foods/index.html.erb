@@ -25,7 +25,7 @@
           <td class="food-size"><%= food.price %></td>
           <td class="food-size"><%= food.user_id %></td>
           <td class="food-size"><%= link_to 'Show', food, class: 'link-to submit' %></td>
-          <td class="food-size"><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link-to submit' %></td>
+          <td class="food-size"><%= link_to 'Destroy', food, method: :delete, class: 'link-to submit' %></td>
         </tr>
       <% end %>
     </tbody>

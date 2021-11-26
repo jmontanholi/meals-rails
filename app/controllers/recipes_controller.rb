@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
     flash[:notice] = "Your recipe is now #{@recipe.public ? 'public' : 'private'}"
     redirect_back(fallback_location: root_path)
   end
+
   # GET /recipes/new
   def new
     @recipe = Recipe.new
