@@ -22,6 +22,5 @@ RSpec.describe 'Recipe page', type: :feature do
       click_button 'Add Ingredient'
       expect(page).to have_content('New Recipe Food')
     end
-
   end
 end
