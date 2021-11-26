@@ -24,7 +24,14 @@ RSpec.describe User, type: :model do
     expect(@user1.name).not_to be_a(Numeric)
   end
 
-  it 'should be able to read recipes' do
+  it 'should not be able to read private recipes' do
+    test_user = User.new(name: 'test', email:'test@gmail', password:'123456')
+    test_user.save!
+    ability = Ability.new(test_user)
+    expect(ability).not_to be_able_to(:read, Recipe.new(user: @user2, public: false))
+  end
+
+  it 'should be able to read private recipes' do
     test_user = User.new(name: 'test', email:'test@gmail', password:'123456')
     test_user.save!
     ability = Ability.new(test_user)

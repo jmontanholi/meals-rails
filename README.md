@@ -1,24 +1,75 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails Meals
 
-Things you may want to cover:
+> A website about food recipes.
 
-* Ruby version
+![screenshot](./app_screenshot.png)
 
-* System dependencies
+In this app users can sign up, login, create foods, recipes and recipe_foods associations
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby
+- Ruby on Rails
+- HTML&CSS
+- VScode
+- Git and GitHub
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+- Ruby
+- Command Line
+- Github account
+### Setup
 
-* ...
+- First open the command line, go to the directory you want this repository to be cloned into then do the following command:
+
+`git clone https://github.com/jmontanholi/meals-rails.git`
+### Install
+
+- Run `bundle install`
+- Create a `.env` file to store your PSQL username and password. Check `database.yml`.
+- Run `rails db:create`
+- Run `rails db:migrate`
+### Usage
+
+- Run `rails server`
+- Open the your host (it will be shown in the console)
+### Run tests
+
+- Run `bundle exec rspec` or `rails rspec`
+## Authors
+
+👤 *Gabriel Rendon*
+
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
+- Linkedin [Gabriel Rendon](https://www.linkedin.com/in/gabriel-rendon-paredes/)
+
+👤 **João Vítor Montanholi Nunes**
+
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
